@@ -11,5 +11,6 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Setup controllers
 $app->mount('/', new \Supervisor\Controllers\IndexController());
+$app->mount('/api', new \Supervisor\Controllers\ApiController());
 
 $app->run();
