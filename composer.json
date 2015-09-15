@@ -4,7 +4,10 @@
         "ext-xmlrpc": "*",
         "silex/silex": "~1.3",
         "twig/twig": "*",
-        "symfony/twig-bridge": "*"
+        "symfony/twig-bridge": "*",
+        "supervisorphp/supervisor": "^3.0",
+        "lstrojny/fxmlrpc": "^0.9.6",
+        "guzzlehttp/guzzle": "^6.1"
     },
     "autoload": {
         "psr-4": {"Supervisor\\": "src/"}

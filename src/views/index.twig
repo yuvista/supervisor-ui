@@ -1,16 +1,28 @@
 <html>
 <head>
-    <title>Hello!</title>
+    <title>Supervisor UI</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-{% if name is defined %}
-    <h1>Hello, {{ name }}</h1>
-{% else %}
-    <h1>... who are you?</h1>
-{% endif %}
-
-<a href="/">Reload</a>
+<div class="container">
+    <div class="header">
+        <h1>Supervisor UI</h1>
+    </div>
+    {% for name, instance in supervisors %}
+    <div class="page-row">
+        <div class="col-md-1">{{ name }}</div>
+        <div class="col-md-1"><i class="text-{{ instance.isConnected ? 'success' : 'danger'  }} glyphicon glyphicon-{{ instance.isConnected ? 'ok' : 'ban'  }}-circle"></i></div>
+    </div>
+    {% endfor %}
+</div>
 
 </body>
 </html>
